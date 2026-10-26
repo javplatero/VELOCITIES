@@ -74,15 +74,6 @@ In all cases μ ~ N(0, 10²) and τ ~ Gamma(10, 1). The Matérn covariance uses 
 
 All files are `.png`. Web Appendix A (predictive process gradients) is analytical and is implemented in `pp_pred()` and `vel_summary()` in `funciones_comunes.R`.
 
-## Representative simulated realizations
-
-To report a typical rather than an atypical realization, each simulation script generates 500 candidate latent fields and 500 candidate data sets, and keeps the most representative ones (functions `pick_gp_ml()`, `pick_gp()` and `pick_counts()` in `funciones_comunes.R`):
-
-- **Geostatistical model:** for each of θ_r and θ_λ, the field whose own maximum likelihood estimates of (τ, φ, δ) are closest, on the log scale, to the true values. Then the data set closest to the componentwise median, standardized by the MAD, of the total number of events, the events in each quarter of the time window and the spatial correlation with the true probabilities.
-- **Point pattern model:** the fields closest to the median of the mean, the variance and the empirical semivariance at lags of 1, 2, 4 and 8 cells. Then the pattern closest to the median of the initial and total counts, the counts per quarter and the spatial correlations with the true intensities.
-
-The distributions of these statistics across the candidates are shown in the `Candidates*.png` figures.
-
 ## Data
 
 The simulated data are fully reproducible with the scripts and seeds above.

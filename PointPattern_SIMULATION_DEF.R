@@ -1,4 +1,3 @@
-setwd("~/Alan")
 source("funciones_comunes.R")
 options(matern_param = "range")   # Matérn 3/2 del artículo, phi = rango; delta = tau * phi^3
 set.seed(123456)
